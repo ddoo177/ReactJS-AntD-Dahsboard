@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+/* Header */
+
+.header {
+    padding-top: 12px;
+    background: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-icon {
+    color: #777777;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Content */
+
+.content {
+    margin: 24px 16px;
+    padding: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.trigger-btn {
+    font-size: 16px;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Sider */
+.sider {
+    height: 100vh;
+    position: sticky !important;
+    left: 0;
+    bottom: 0;
+    top: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo {
+    color: #222222;
+    margin: 30px 0;
+    font-size: 2.5rem;
+}
+
+.menu-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 700;
+}
+
+.card {
+    background-image: linear-gradient(to bottom, #222222, #525252, #888888);
+    color: #fff !important;
+}
+
+.plant-card {
+    flex: 1;
+    text-align: center;
+}
+
+.ant-menu-item-selected {
+    background-color: #222222 !important;
+    color: #ffffff !important;
+    border-radius: 20px;
+}
+
+.ant-menu-item {
+    border-radius: 50%;
+}
+
+.ant-btn-primary {
+    background-color: #222222 !important;
+}
+
+.ant-btn-primary:hover {
+    color: #ffffff !important;
+    background-color: #3b3b3b !important;
+}
+
+.top-user,
+.featured-user {
+    flex: 1;
+}
+
+.divider {
+    border: 2px #222222 solid;
+    height: 40px;
 }

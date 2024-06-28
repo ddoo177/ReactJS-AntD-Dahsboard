@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable no-unused-vars */
+import { Button, Flex, Layout, Switch } from "antd";
+import { useState } from "react";
+import { Sidebar } from "./components/Sidebar";
+import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
+import "./App.css";
+import { MyHeader } from "./components/MyHeader";
+import { Dashboard } from "./components/Dashboard";
+
+const { Sider, Header, Content } = Layout;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [collapsed, setCollapsed] = useState(false);
+    return (
+        <Layout>
+            <Sider
+                theme="light"
+                trigger={null}
+                collapsible
+                collapsed={collapsed}
+                className="sider"
+            >
+                <Sidebar />
+
+                <Button
+                    type="text"
+                    icon={
+                        collapsed ? (
+                            <MenuUnfoldOutlined />
+                        ) : (
+                            <MenuFoldOutlined />
+                        )
+                    }
+                    onClick={() => setCollapsed(!collapsed)}
+                    className="trigger-btn"
+                />
+            </Sider>
+            <Layout>
+                <Header className="header">
+                    <MyHeader />
+                </Header>
+                <Content className="content">
+                    <Dashboard/>
+                </Content>
+            </Layout>
+        </Layout>
+    );
 }
 
 export default App;
