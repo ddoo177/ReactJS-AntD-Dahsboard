@@ -10,43 +10,44 @@ import {
     CarryOutOutlined,
     SettingOutlined,
 } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 const items = [
     {
         key: "1",
         icon: <UserOutlined />,
         label: "Dashboard",
-        key: "/",
+        link: "/",
     },
     {
         key: "2",
         icon: <CarryOutOutlined />,
         label: "My Orders",
-        key: "/order",
+        link: "/order",
     },
     {
         key: "3",
         icon: <OrderedListOutlined />,
         label: "Todo",
-        key: "/Todo",
+        link: "/todo",
     },
     {
         key: "4",
         icon: <ProfileOutlined />,
         label: "Profile",
-        key: "/profile",
+        link: "/profile",
     },
     {
         key: "5",
         icon: <SettingOutlined />,
         label: "Settings",
-        key: "/setting",
+        link: "/setting",
     },
     {
         key: "6",
         icon: <LogoutOutlined />,
         label: "Log out",
-        key: "/login",
+        link: "/login",
     },
 ];
 
@@ -62,9 +63,14 @@ export function Sidebar() {
                 mode="inline"
                 defaultSelectedKeys={["1"]}
                 className="menu-bar"
-                selectable="false"
                 items={items}
-            />
+            >
+                {items.map((item) => (
+                    <Menu.Item key={item.key} icon={item.icon}>
+                        <Link to={item.link}>{item.label}</Link>
+                    </Menu.Item>
+                ))}
+            </Menu>
         </>
     );
 }
